@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="js/Game.js"></script>
+  <script type="text/javascript" src="js/Food.js"></script>
+  <script type="text/javascript" src="js/Block.js"></script>
+  <script type="text/javascript" src="js/Map.js"></script>
+  <script type="text/javascript" src="js/Snake.js"></script>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+      height: 600px;
+      width: 600px;
+      margin: 20px auto 0;
+    }
+    .row_box {
+      overflow: hidden;
+    }
+    .col_box {
+      float: left;
+      height: 30px;
+      width: 30px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var snakeObj = {
+      head_pic: ["img/1.png", "img/2.png", "img/3.png", "img/4.png"],
+		  body_pic: ["img/5.png"],
+		  tail_pic: ["img/6.png", "img/7.png", "img/8.png", "img/9.png"]
+    }
+    var map = new Map(20, 20, 600, 600);
+    var food = new Food(7, 8, "img/food.jpg");
+    var snake = new Snake(snakeObj);
+    var block = new Block("img/block.png");
+
+    var g = new Game(map, food, snake, block);
+  </script>
+  
+</body>
+</html>
